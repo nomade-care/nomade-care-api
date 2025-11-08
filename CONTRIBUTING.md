@@ -30,8 +30,8 @@ We appreciate all the amazing people who have contributed to this project! This 
 We welcome contributions from everyone! Whether it's bug fixes, features, documentation, or just spreading the word.
 
 ### Ways to Contribute:
-- 🐛 **Report Bugs**: Found a bug? [Open an issue](https://github.com/yourusername/hack/issues)
-- ✨ **Suggest Features**: Have an idea? [Start a discussion](https://github.com/yourusername/hack/discussions)
+- 🐛 **Report Bugs**: Found a bug? [Open an issue](https://github.com/nomade-care/nomade-care-api/issues)
+- ✨ **Suggest Features**: Have an idea? [Start a discussion](https://github.com/nomade-care/nomade-care-api/discussions)
 - 📝 **Improve Docs**: Help make our documentation better
 - 💻 **Code**: Submit pull requests with fixes or new features
 

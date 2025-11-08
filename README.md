@@ -231,7 +231,7 @@ nomade-care-api/
 ├── .gitignore            # Git ignore rules
 ├── README.md             # Project documentation
 ├── LICENSE               # MIT License
-└── CONTRIBUTORS.md       # Contributors information
+└── CONTRIBUTING.md       # Contributing guidelines & contributors
 ```
 
 ### Running Tests
@@ -325,7 +325,7 @@ We would like to thank:
 
 - **Nomade** - *Initial work*
 
-See also the list of [contributors](CONTRIBUTORS.md) who participated in this project.
+See also the list of [contributors](CONTRIBUTING.md) who participated in this project.
 
 ---
 

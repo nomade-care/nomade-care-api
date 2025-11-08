@@ -123,7 +123,7 @@ The server will start on `http://localhost:8000` by default.
 
 ### API Endpoints
 
-#### POST /analyze-audio
+#### POST /api/audio/analyze
 
 Upload an audio file for emotion analysis.
 
@@ -134,7 +134,7 @@ Upload an audio file for emotion analysis.
 
 **Example using curl:**
 ```bash
-curl -X POST "http://localhost:8000/analyze-audio" \
+curl -X POST "http://localhost:8000/api/audio/analyze" \
      -F "audio=@/path/to/your/audio.wav"
 ```
 

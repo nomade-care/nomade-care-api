@@ -42,10 +42,6 @@ We welcome contributions from everyone! Whether it's bug fixes, features, docume
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## 📜 Recognition
-
-Contributors are recognized using the [all-contributors](https://github.com/all-contributors/all-contributors) bot. If you've contributed and want to be added, just let us know!
-
 ---
 
 *Made with ❤️ by the NomadCare team*

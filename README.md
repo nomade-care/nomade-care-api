@@ -285,8 +285,7 @@ A: The API is open-source. Usage costs may apply for cloud deployments or hosted
 
 If you have questions or need help:
 
-- 📧 **Email**: support@nomadcare.com
-- 💬 **Discord**: [Join our community](https://discord.gg/nomadcare)
+- 📧 **Email**: nomadengenuity@gmail.com
 - 🐛 **Issues**: [GitHub Issues](https://github.com/nomade-care/nomade-care-api/issues)
 - 📖 **Documentation**: [Full API Docs](https://nomadcare.vercel.app/docs)
 
@@ -323,9 +322,7 @@ We would like to thank:
 
 ## Authors
 
-- **Nomade** - *Initial work*
-
-See also the list of [contributors](CONTRIBUTING.md) who participated in this project.
+- **NomadCare** - *Initial work*
 
 ---
 

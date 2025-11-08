@@ -157,7 +157,7 @@ curl -X POST "http://localhost:8000/api/audio/analyze" \
   ],
   "processing_time": 2.34,
   "timestamp": "2025-11-08T10:15:30.123456",
-  "insights": "🏥 Clinical Assessment:\nPrimary Emotion: Happiness (85%)\nProfile: High valence positive affect with moderate arousal\nBehavioral Indicators: Tone elevation, rhythmic speech patterns\nPsychological Context: Possible social engagement or achievement satisfaction\nRecommendations: Monitor for sustained positive affect"
+  "insights": "🏥 Clinical Assessment:\nThe audio analysis reveals a primary emotion of happiness with 85% confidence. This indicates high valence positive affect with moderate arousal levels. Behavioral indicators include elevated tone and rhythmic speech patterns, suggesting genuine positive engagement. Psychologically, this may reflect social satisfaction or achievement recognition. Clinically, monitor for sustained positive affect patterns and consider positive reinforcement techniques in therapeutic interventions."
 }
 ```
 

@@ -1,6 +1,5 @@
 import ollama
 import json
-import xml.etree.ElementTree as ET
 from typing import List, Dict, Any
 
 class LLMService:
@@ -39,7 +38,7 @@ class LLMService:
 </xml>
 </RESPONSE_STRUCTURE>
 
-Example:
+Example structured analysis:
 <xml>
 <clinical_assessment>
 <primary_emotion>Happiness (87%)</primary_emotion>
@@ -50,7 +49,7 @@ Example:
 </clinical_assessment>
 </xml>
 
-Respond ONLY with the XML structure, no additional text."""
+Based on this structure, provide a clean, professional text analysis that a human doctor can read. Do NOT output XML. Write in natural, clinical language with insights for mental health assessment."""
 
     async def generate_insights(self, emotions: List[Dict[str, Any]]) -> str:
         """
@@ -82,41 +81,8 @@ Respond ONLY with the XML structure, no additional text."""
 
             raw_response = response['message']['content'].strip()
 
-            # Parse XML and format nicely
-            try:
-                # Extract XML content (remove any text before/after)
-                xml_start = raw_response.find('<xml>')
-                xml_end = raw_response.rfind('</xml>') + 6
-                if xml_start != -1 and xml_end != -1:
-                    xml_content = raw_response[xml_start:xml_end]
-                else:
-                    xml_content = raw_response
-
-                root = ET.fromstring(xml_content)
-                assessment = root.find('clinical_assessment')
-
-                if assessment is not None:
-                    primary = assessment.find('primary_emotion').text if assessment.find('primary_emotion') is not None else "Unknown"
-                    profile = assessment.find('emotional_profile').text if assessment.find('emotional_profile') is not None else ""
-                    indicators = assessment.find('behavioral_indicators').text if assessment.find('behavioral_indicators') is not None else ""
-                    context = assessment.find('psychological_context').text if assessment.find('psychological_context') is not None else ""
-                    recommendations = assessment.find('clinical_recommendations').text if assessment.find('clinical_recommendations') is not None else ""
-
-                    # Format as readable text
-                    formatted = f"🏥 Clinical Assessment:\n"
-                    formatted += f"Primary Emotion: {primary}\n"
-                    if profile: formatted += f"Profile: {profile}\n"
-                    if indicators: formatted += f"Behavioral Indicators: {indicators}\n"
-                    if context: formatted += f"Psychological Context: {context}\n"
-                    if recommendations: formatted += f"Recommendations: {recommendations}"
-
-                    return formatted
-                else:
-                    return f"🤖 AI Analysis: {raw_response}"
-
-            except ET.ParseError:
-                # If XML parsing fails, return raw response
-                return f"🤖 AI Analysis: {raw_response}"
+            # Return clean clinical insights
+            return f"🏥 Clinical Assessment:\n{raw_response}"
 
         except Exception as e:
             # Fallback if LLM fails

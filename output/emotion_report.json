@@ -1,0 +1,127 @@
+{
+  "metadata": {
+    "processing_date": "2025-11-08 08:24:01",
+    "model": "Hatman/audio-emotion-detection",
+    "dataset": "PolyAI/minds14 (en-US)",
+    "total_samples": 5,
+    "description": "Audio emotion detection on voice assistant interactions"
+  },
+  "results": [
+    {
+      "audio_id": 1,
+      "transcription": "I would like to set up a joint account with my partner",
+      "original_intent": "11",
+      "detected_emotion": "Neutral",
+      "confidence": 0.6298,
+      "top_predictions": [
+        {
+          "emotion": "Neutral",
+          "confidence": 0.6298
+        },
+        {
+          "emotion": "Sad",
+          "confidence": 0.3341
+        },
+        {
+          "emotion": "Disgusted",
+          "confidence": 0.0239
+        }
+      ]
+    },
+    {
+      "audio_id": 2,
+      "transcription": "Henry County set up a joint account with my wife and where are they at",
+      "original_intent": "11",
+      "detected_emotion": "Sad",
+      "confidence": 0.9479,
+      "top_predictions": [
+        {
+          "emotion": "Sad",
+          "confidence": 0.9479
+        },
+        {
+          "emotion": "Fearful",
+          "confidence": 0.0346
+        },
+        {
+          "emotion": "Neutral",
+          "confidence": 0.0099
+        }
+      ]
+    },
+    {
+      "audio_id": 3,
+      "transcription": "hi I'd like to set up a joint account with my partner I'm not seeing the option to do it on the app so I called in to get some help can I do it over the phone with you and give you the information",
+      "original_intent": "11",
+      "detected_emotion": "Neutral",
+      "confidence": 0.4206,
+      "top_predictions": [
+        {
+          "emotion": "Neutral",
+          "confidence": 0.4206
+        },
+        {
+          "emotion": "Happy",
+          "confidence": 0.2378
+        },
+        {
+          "emotion": "Sad",
+          "confidence": 0.1411
+        }
+      ]
+    },
+    {
+      "audio_id": 4,
+      "transcription": "how do I start a joint account",
+      "original_intent": "11",
+      "detected_emotion": "Neutral",
+      "confidence": 0.5475,
+      "top_predictions": [
+        {
+          "emotion": "Neutral",
+          "confidence": 0.5475
+        },
+        {
+          "emotion": "Happy",
+          "confidence": 0.3303
+        },
+        {
+          "emotion": "Angry",
+          "confidence": 0.0602
+        }
+      ]
+    },
+    {
+      "audio_id": 5,
+      "transcription": "can you help me set up a joint bank account",
+      "original_intent": "11",
+      "detected_emotion": "Sad",
+      "confidence": 0.4121,
+      "top_predictions": [
+        {
+          "emotion": "Sad",
+          "confidence": 0.4121
+        },
+        {
+          "emotion": "Happy",
+          "confidence": 0.2665
+        },
+        {
+          "emotion": "Neutral",
+          "confidence": 0.1656
+        }
+      ]
+    }
+  ],
+  "statistics": {
+    "average_confidence": 0.5916,
+    "detected_emotions": [
+      "Sad",
+      "Neutral"
+    ],
+    "emotion_distribution": {
+      "Neutral": 3,
+      "Sad": 2
+    }
+  }
+}

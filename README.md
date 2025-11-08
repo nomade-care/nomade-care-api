@@ -4,7 +4,7 @@
 
 </div>
 
-# Hack - Audio Emotion Detection API
+# NomadCare API - Audio Emotion Detection
 
 [![Python Version](https://img.shields.io/badge/python-3.13+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -88,11 +88,25 @@ Audio files are automatically resampled to 16kHz for optimal model performance.
    ```
 
 3. **Set up environment variables:**
-   Create a `.env` file in the project root:
+   Copy `.env.example` to `.env` and fill in your values:
+   ```bash
+   cp .env.example .env
+   ```
+
+   Required environment variables:
    ```env
+   # Hugging Face Configuration
+   HF_HUB_DISABLE_IMPLICIT_TOKEN=1
+   HF_TOKEN=your_huggingface_token_here
+
+   # Application Settings
+   ENV=development
    HOST=0.0.0.0
    PORT=8000
-   RELOAD=false
+   RELOAD=true
+
+   # Frontend URL (for CORS)
+   FRONTEND_URL=http://localhost:3000
    ```
 
 ## Usage
@@ -159,9 +173,13 @@ Once the server is running, visit `http://localhost:8000/docs` for interactive A
 
 The application can be configured using environment variables:
 
+- `HF_HUB_DISABLE_IMPLICIT_TOKEN`: Disable implicit token for Hugging Face Hub (set to `1`)
+- `HF_TOKEN`: Your Hugging Face API token for accessing models
+- `ENV`: Environment mode (`development` or `production`)
 - `HOST`: Server host (default: `0.0.0.0`)
 - `PORT`: Server port (default: `8000`)
-- `RELOAD`: Enable auto-reload for development (default: `false`)
+- `RELOAD`: Enable auto-reload for development (default: `true` in dev, `false` in prod)
+- `FRONTEND_URL`: Frontend URL for CORS configuration
 
 ## 🚀 Deployment
 
@@ -198,7 +216,7 @@ The API can be deployed to:
 ### Project Structure
 
 ```
-hack/
+nomade-care-api/
 ├── controllers/          # Request handlers
 ├── dto/                  # Data transfer objects
 ├── routers/              # API route definitions
@@ -208,7 +226,12 @@ hack/
 ├── output/               # Generated outputs
 ├── run.py                # Application entry point
 ├── pyproject.toml        # Project configuration
-└── uv.lock               # Dependency lock file
+├── uv.lock               # Dependency lock file
+├── .env.example          # Environment variables template
+├── .gitignore            # Git ignore rules
+├── README.md             # Project documentation
+├── LICENSE               # MIT License
+└── CONTRIBUTORS.md       # Contributors information
 ```
 
 ### Running Tests

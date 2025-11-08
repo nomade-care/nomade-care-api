@@ -36,6 +36,7 @@ A powerful REST API for real-time audio emotion detection using state-of-the-art
 ## Features
 
 - **Real-time Emotion Detection**: Upload audio files and receive instant emotion analysis
+- **AI-Powered Insights**: LLM-generated human-readable interpretations with emojis
 - **High Accuracy**: Powered by Hugging Face transformers and specialized audio models
 - **RESTful API**: Clean, documented endpoints using FastAPI
 - **Audio Format Support**: Handles various audio formats with automatic resampling
@@ -142,17 +143,21 @@ curl -X POST "http://localhost:8000/api/audio/analyze" \
 ```json
 {
   "audio_id": "unique-id",
-  "emotions": [
+  "detected_emotion": "happy",
+  "confidence": 0.85,
+  "top_predictions": [
     {
-      "label": "happy",
-      "score": 0.85
+      "emotion": "happy",
+      "confidence": 0.85
     },
     {
-      "label": "sad",
-      "score": 0.12
+      "emotion": "sad",
+      "confidence": 0.12
     }
   ],
-  "processing_time": 2.34
+  "processing_time": 2.34,
+  "timestamp": "2025-11-08T10:15:30.123456",
+  "insights": "🏥 Clinical Assessment:\nPrimary Emotion: Happiness (85%)\nProfile: High valence positive affect with moderate arousal\nBehavioral Indicators: Tone elevation, rhythmic speech patterns\nPsychological Context: Possible social engagement or achievement satisfaction\nRecommendations: Monitor for sustained positive affect"
 }
 ```
 

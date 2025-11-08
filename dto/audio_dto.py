@@ -18,6 +18,7 @@ class AudioAnalysisResult(BaseModel):
     top_predictions: List[EmotionPrediction] = Field(..., description="Top 3 emotion predictions")
     processing_time: float = Field(..., description="Processing time in seconds")
     timestamp: str = Field(..., description="Analysis timestamp")
+    insights: Optional[str] = Field(None, description="LLM-generated emotional insights")
 
 
 class ErrorResponse(BaseModel):

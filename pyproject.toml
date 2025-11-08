@@ -26,4 +26,5 @@ dependencies = [
     "uvicorn>=0.38.0",
     "python-multipart>=0.0.20",
     "sse-starlette>=3.0.3",
+    "ollama>=0.3.0",
 ]

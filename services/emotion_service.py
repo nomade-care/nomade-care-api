@@ -6,20 +6,23 @@ from datetime import datetime
 import librosa
 from transformers import pipeline
 from dto.audio_dto import AudioAnalysisResult, EmotionPrediction
+from services.llm_service import LLMService
 
 
 class EmotionDetectionService:
     """Service for audio emotion detection using transformer models."""
     
-    def __init__(self, model_name: str = "Hatman/audio-emotion-detection"):
+    def __init__(self, model_name: str = "Hatman/audio-emotion-detection", llm_model: str = "qwen2.5:1.5b"):
         """
         Initialize emotion detection service.
-        
+
         Args:
             model_name: HuggingFace model identifier
+            llm_model: Ollama model for insights generation
         """
         self.model_name = model_name
         self.pipe = None
+        self.llm_service = LLMService(llm_model)
         
     def load_model(self) -> None:
         """Load the emotion detection model pipeline."""
@@ -60,6 +63,18 @@ class EmotionDetectionService:
         # Build result
         processing_time = time.time() - start_time
         
+        # Convert predictions to dict format for LLM
+        emotions_dict = [
+            {"label": pred['label'], "score": round(pred['score'], 4)}
+            for pred in predictions[:5]  # Top 5 for better context
+        ]
+
+        # Generate LLM insights
+        try:
+            insights = await self.llm_service.generate_insights(emotions_dict)
+        except Exception as e:
+            insights = f"🤔 Emotion analysis completed. AI insights temporarily unavailable. Error: {str(e)}"
+
         result = AudioAnalysisResult(
             audio_id=audio_id,
             detected_emotion=predictions[0]['label'],
@@ -72,7 +87,8 @@ class EmotionDetectionService:
                 for pred in predictions[:3]
             ],
             processing_time=round(processing_time, 3),
-            timestamp=datetime.now().isoformat()
+            timestamp=datetime.now().isoformat(),
+            insights=insights
         )
-        
+
         return result

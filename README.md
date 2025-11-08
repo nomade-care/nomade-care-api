@@ -7,7 +7,7 @@
 # NomadCare API - Audio Emotion Detection
 
 [![Python Version](https://img.shields.io/badge/python-3.13+-blue.svg)](https://www.python.org/downloads/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.121+-green.svg)](https://fastapi.tiangolo.com/)
 
 A powerful REST API for real-time audio emotion detection using state-of-the-art machine learning models. Built with FastAPI, this service analyzes audio files to identify emotional content such as happiness, sadness, anger, and more.
@@ -230,7 +230,7 @@ nomade-care-api/
 ├── .env.example          # Environment variables template
 ├── .gitignore            # Git ignore rules
 ├── README.md             # Project documentation
-├── LICENSE               # MIT License
+├── LICENSE               # Apache 2.0 License
 └── CONTRIBUTING.md       # Contributing guidelines & contributors
 ```
 
@@ -309,7 +309,7 @@ We welcome contributions! Please follow these steps:
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
 
 ## 🙏 Acknowledgments
 
